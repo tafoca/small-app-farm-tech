@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import TodoView from './compoments/TodoList';
 
 function App() {
  
@@ -36,7 +37,7 @@ const addTodoHandler = () => {
        align-items-center mx-auto" style={{"width":"400p",
        "backgroundColor":"white", "marginTop":"15px"}}>
         <h1 className="card text-white bg-primary mb-1"
-        styleName="max-width: 20rem;">Task manager</h1>
+        stylename="max-width: 20rem;">Task manager</h1>
          <h6 className="card text-white bg-primary mb-3">
           Farm Tech</h6>
           <div className='card-body'>
@@ -50,14 +51,14 @@ const addTodoHandler = () => {
               onChange={event =>setDesc(event.target.value)} />
               <button className='btn btn-outline-primary mx-2 mb-3' 
               onClick={addTodoHandler}
-              style={{"borderRaduis":"50px", "font-weight":"bold"}}>
+              style={{"borderRaduis":"50px", "fontWeight":"bold"}}>
                 Add Task
               </button>
             </span>
             <h5 className="card text-white bg-dark mb-3"> yours Tasks </h5>
             <div>
               {/* Todo items - external component */}
-
+              <TodoView todoList={todoList} />
             </div>
           </div>
 

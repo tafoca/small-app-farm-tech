@@ -7,12 +7,20 @@ function TodoItem(props) {
             console.log(res.data);
         });
     }
-
     return (
         <div>
             <p>
-                
+                <span style={{fontWeight: 'bold, underline'}}>
+                    {props.title} :
+                </span> {props.description}
+                <button className="btn btn-outline-danger my-2 mx-2"
+                style={{"borderRaduis":"50px", "font-weight":"bold"}}
+                 onClick={() => deleteTodohanler(props.title)}>X</button>
+                 <hr></hr>
+
             </p>
-        </div>)
+        </div>
+        )
          
 }
+export default  TodoItem
